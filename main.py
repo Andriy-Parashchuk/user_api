@@ -26,3 +26,11 @@ def create_user(user: User):
     users.append(user)
     return user
 
+
+@app.get('/users/{user_id}')
+def get_user_by_id(user_id:int):
+    for user in users:
+        if user['id'] == user_id:
+            return user
+    return 'nema'
+
